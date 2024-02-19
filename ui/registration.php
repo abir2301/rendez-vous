@@ -19,14 +19,20 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email"  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
 
+
+        <label for="password">password:</label>
+        <input type="password" id="password" name="password"  required >
+
+
         <label for="phone_number">Phone Number:</label>
-        <input type="tel" id="phone_number" name="phone_number" pattern="(21|22|97|95|20|96)[0-9]{6}" required>
+        <input type="tel" id="phone_number" name="phone_number" pattern="(21|22|97|95|20|96|50)[0-9]{6}" required>
 
         <label for="address">Address:</label>
         <input type="text" id="address" name="address">
 
         <input type="submit" value="Register">
     </form>
+    <a href="./login.php" target="_blank">already have an account? </a>
 </div>
 </body>
 </html>
