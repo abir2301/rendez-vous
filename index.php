@@ -1,5 +1,4 @@
 <?php
-echo "abir";
 include ('./db/connexion.php');
 
 session_start();

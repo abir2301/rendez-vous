@@ -1,5 +1,5 @@
 <?php
-include 'connexion.php'; // Assuming the filename is connection.php and it's in the same directory as this file
+include 'connexion.php';
 
 // Retrieve form data
 $name = $_POST['name'];
@@ -18,9 +18,10 @@ try {
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $name;
         $_SESSION['password'] = $password;
+        header("location :../ui/home.php");
     } else {
-        // Check if the error is due to duplicate email
-        if ($conn->errno == 1062) { // 1062 is the error code for duplicate entry
+
+        if ($conn->errno == 1062) {
             echo "<script>alert('Email is already in use '); document.location='../ui/registration.php'</script>";
         } else {
  throw new Exception("Error: " . $conn->error);

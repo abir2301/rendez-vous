@@ -6,16 +6,18 @@ include 'connexion.php'; // Assuming the filename is connection.php and it's in 
 $email = $_POST['email'];
 $password = $_POST['password'];
 try {
-    $sql = "select name , id   from  where email ='$email'";
+    $sql = "select name   from patients where email = '$email' ";
     $result = $conn->query($sql);
-    echo $result;
-    if ( $result=== TRUE) {
+
+    if ( $result->num_rows > 0) {
         session_start();
         $row_patient_name = $result->fetch_assoc();
         $name = $row_patient_name['name'];
+
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $name;
         $_SESSION['password'] = $password;
+        header("location : ../ui/home.php");
     } else {
         // Check if the error is due to duplicate email
         if ($conn->errno == 1062) { // 1062 is the error code for duplicate entry
