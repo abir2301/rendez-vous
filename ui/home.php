@@ -1,6 +1,10 @@
 <?php
 include('../db/home.php');
 include "../db/connexion.php";
+if (!isset($_SESSION['authenticated'])) {
+    header("Location: index.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,11 +13,11 @@ include "../db/connexion.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Screen</title>
     <link rel="stylesheet" href="../stylesheet/style.css">
-    <script src="./home.js"></script>
+
 </head>
 <body>
 <div class="bar">
-    <div style="display: flex">
+    <div style="display: flex  ; align-items: center" >
         <img class="img_profile" src="../assets/man.png">
         <div>
             <?php
@@ -24,8 +28,10 @@ include "../db/connexion.php";
             <p><strong>Email:  </strong><?php echo $email; ?></p>
         </div>
     </div>
-    <div style="padding: 5px">
+    <div style="padding: 5px  ; flex-direction: column ; display: flex ; gap: 5px ">
         <button class="bnt-ajout"  id="btn">New Appointment</button>
+        <div ><a href="../db/logout.php"><button class="bnt-ajout" id="logout">Log Out</button></a></div>
+
     </div>
 </div>
 

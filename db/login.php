@@ -17,10 +17,11 @@ try {
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $name;
         $_SESSION['password'] = $password;
-        header("location : ../ui/home.php");
+        header("Location: ../ui/home.php");
+        exit();
     } else {
-        // Check if the error is due to duplicate email
-        if ($conn->errno == 1062) { // 1062 is the error code for duplicate entry
+
+        if ($conn->errno == 1062) {
             echo "<script>alert('Email doesn t exist  '); document.location='../ui/registration.php'</script>";
         } else {
             throw new Exception("Error: " . $conn->error);

@@ -18,7 +18,8 @@ try {
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $name;
         $_SESSION['password'] = $password;
-        header("location :../ui/home.php");
+        header("Location: ../ui/home.php");
+        exit();
     } else {
 
         if ($conn->errno == 1062) {

@@ -6,17 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../stylesheet/style.css">
+    <link rel="stylesheet" href="../../stylesheet/style.css">
 </head>
 <body>
 <div class="container">
     <h2>Login</h2>
-    <form action="../db/login.php" method="post">
-        <label for="Email">Email:</label>
-        <input type="text" id="email" name="email" required>
+    <form action="../../db/doctor/login.php" method="post">
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <label for="matricule">matricule:</label>
+        <input type="text" id="matricule" name="matricule" required>
 
         <input type="submit" value="Login">
     </form>
